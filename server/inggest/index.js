@@ -1,5 +1,5 @@
-import User from "../models/User.js";
 import { Inngest } from "inngest";
+import User from "../models/User.js";
 
 export const inngest = new Inngest({ id: "movie-ticket-booking" });
 
@@ -22,7 +22,7 @@ const syncUserCreation = inngest.createFunction(
 
 // function to delete user from database
 const syncUserDeletion = inngest.createFunction(
-  { id: "delete-user-from-clerk" },
+  { id: "delete-user-with-clerk" },
   { event: "clerk/user.deleted" },
   async ({ event }) => {
     const { id } = event.data;

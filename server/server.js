@@ -14,9 +14,9 @@ await connectDB();
 app.use(express.json()); /* express middleware */
 app.use(cors()); /* cors middleware */
 app.use(clerkMiddleware()); /* clerk middleware */
-app.use("/api/inngest", serve({ client: inngest, functions })); /* inggest middleware */
 
 // API Routes
 app.get("/", (req, res) => res.send("The server is Active"));
+app.use("/api/inngest", serve({ client: inngest, functions })); /* Route */
 
 app.listen(port, () => console.log(`Server in: http://localhost:${port}`));
